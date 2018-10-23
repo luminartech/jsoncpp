@@ -4,8 +4,6 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
 PROJECT(jsoncpp)
 ENABLE_TESTING()
 
-set(JSONCPP_WITH_CMAKE_PACKAGE "Generate and install cmake package files" ON)
-
 OPTION(JSONCPP_WITH_TESTS "Compile and (for jsoncpp_check) run JsonCpp test executables" ON)
 OPTION(JSONCPP_WITH_POST_BUILD_UNITTEST "Automatically run unit-tests as a post build step" ON)
 OPTION(JSONCPP_WITH_WARNING_AS_ERROR "Force compilation to fail if a warning occurs" OFF)
@@ -32,7 +30,7 @@ ENDIF()
 # Adhere to GNU filesystem layout conventions
 INCLUDE(GNUInstallDirs)
 
-SET(DEBUG_LIBNAME_SUFFIX "" CACHE STRING "Optional suffix to append to the library name for a debug build")
+SET(DEBUG_LIBNAME_SUFFIX "d" CACHE STRING "Optional suffix to append to the library name for a debug build")
 
 # Set variable named ${VAR_NAME} to value ${VALUE}
 FUNCTION(set_using_dynamic_name VAR_NAME VALUE)
